@@ -22,3 +22,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', '<leader>m', '<Cmd>NERDTreeToggle<CR>', { desc = 'Toggle NerdTree' })
 vim.keymap.set('n', '<leader>M', '<Cmd>NERDTreeFind<CR>', { desc = 'Toggle NerdTree' })
+
+-- Keybindings to make delete not cut
+vim.keymap.set('n', 'dd', '"_dd', { desc = 'Delete line' })
+vim.keymap.set('n', 'D', '"_D', { desc = 'Delete to end of line' })
+vim.keymap.set('n', 'x', '"_x', { desc = 'Delete character' })
