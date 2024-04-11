@@ -23,7 +23,11 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader>m', '<Cmd>NERDTreeToggle<CR>', { desc = 'Toggle NerdTree' })
 vim.keymap.set('n', '<leader>M', '<Cmd>NERDTreeFind<CR>', { desc = 'Toggle NerdTree' })
 
--- Keybindings to make delete not cut
-vim.keymap.set('n', 'dd', '"_dd', { desc = 'Delete line' })
-vim.keymap.set('n', 'D', '"_D', { desc = 'Delete to end of line' })
-vim.keymap.set('n', 'x', '"_x', { desc = 'Delete character' })
+vim.keymap.set('n', "<leader>p", function() require("telescope").extensions.yank_history.yank_history({ }) end, { desc = "Open Yank History" })
+vim.keymap.set({"n","x"}, "p", "<Plug>(YankyPutAfter)")
+vim.keymap.set({"n","x"}, "P", "<Plug>(YankyPutBefore)")
+vim.keymap.set({"n","x"}, "gp", "<Plug>(YankyGPutAfter)")
+vim.keymap.set({"n","x"}, "gP", "<Plug>(YankyGPutBefore)")
+
+vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
+vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")

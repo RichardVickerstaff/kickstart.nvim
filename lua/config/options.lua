@@ -15,7 +15,6 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 vim.opt.mouse = 'a'
 vim.opt.showmode = false
-vim.opt.clipboard = 'unnamedplus'
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.cursorline = true
