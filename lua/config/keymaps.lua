@@ -31,3 +31,7 @@ vim.keymap.set({"n","x"}, "gP", "<Plug>(YankyGPutBefore)")
 
 vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
 vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
+
+vim.keymap.set('n', '<leader>le', ':call localorie#translate()<CR>', { desc = 'Show translation for key' })
+vim.keymap.set('n', '<leader>le', ':echo localorie#expand_key()<CR>', { desc = 'Expand translation key' })
+vim.api.nvim_create_autocmd('CursorMoved', { pattern = '*.yml', callback = function() vim.cmd('echo localorie#expand_key()') end})

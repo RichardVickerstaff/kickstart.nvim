@@ -23,8 +23,8 @@ endfunction
 ]]
 
 
-vim.keymap.set('n', '<leader>t', ':call InvokeViaTmux("carwow run rspec", expand("%"))<CR>', { desc = 'Test file' })
-vim.keymap.set('n', '<leader>T', ':call InvokeViaTmux("carwow run rspec", expand("%") . ":" . line("."))<CR>', { desc = 'Test file' })
+vim.keymap.set('n', '<leader>t', ':call InvokeViaTmuxWithFile("carwow run rspec", expand("%"))<CR>', { desc = 'Test file' })
+vim.keymap.set('n', '<leader>T', ':call InvokeViaTmuxWithFile("carwow run rspec", expand("%") . ":" . line("."))<CR>', { desc = 'Test file' })
 
 local aucmd_dict = {
     FileType = {
